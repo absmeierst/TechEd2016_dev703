@@ -1,0 +1,14 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "/java(.*)",
+		"destination": "java",
+		"csrfProtection": true,
+		"authenticationType": "xsuaa"
+	}, {
+		"source": "^/(.*)$",
+		"localDir": "resources",
+		"authenticationType": "xsuaa"
+	}]
+}

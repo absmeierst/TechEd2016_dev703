@@ -1,0 +1,42 @@
+_schema-version: "2.0.0"
+ID: com.sap.xsa.teched.dev703-java
+version: 0.1.0
+
+modules:
+  - name: dev703-java
+    type: javascript.nodejs
+    path: web/
+    requires:
+      - name: java-uaa
+      - name: java
+        group: destinations
+        properties:
+          name: java
+          url: ~{url}
+          forwardAuthToken: true
+    
+  - name: dev703-java-backend
+    type: java.tomee
+    path: java/target/dev703-java.war
+    provides: 
+      - name: java
+        properties:
+          url: "${default-url}"
+    requires:
+      - name: dev703-java-uaa
+      - name: dev703-java-hdi-container
+      - name: dev703-java-db
+
+  - name: dev703-java-db
+    type: com.sap.xs.hdi
+    path: db/
+    requires:
+      - name: dev703-java-hdi-container
+
+resources:
+  - name: dev703-java-hdi-container
+    type: com.sap.xs.hdi-container
+    
+  - name: dev703-java-uaa
+    type: com.sap.xs.uaa-space
+  

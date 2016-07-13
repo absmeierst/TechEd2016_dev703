@@ -1,0 +1,13 @@
+_schema-version: "2.0.0"
+ID: com.sap.xsa.teched.dev703-java.config1 
+extends: com.sap.xsa.teched.dev703-java
+
+modules:
+  - name: dev703-java
+    parameters:
+      memory: 128M
+
+  - name: dev703-java-backend
+    parameters:
+      memory: 512M
+      instances: 1

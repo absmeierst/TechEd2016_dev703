@@ -3,6 +3,20 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+.classpath
+.pmd
+.project
+.settings/
+.sonatype
+target/
+bin/
+node_modules
+*.mtar
+node/
+mta-assembly
+settings.xml
+*.sw[o|p]
+
 # Package Files #
 *.jar
 *.war

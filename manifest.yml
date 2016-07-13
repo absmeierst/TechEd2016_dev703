@@ -1,0 +1,31 @@
+---
+applications:
+- name: dev703-java-db
+  path: db
+  memory: 128M
+  no-route: true
+  services:
+    - dev703-java-hdi-container
+
+- name: dev703-java
+  path: web
+  port: 3702
+  memory: 128M
+  env:
+    destinations: >
+      [
+        {"name":"java", "url":"https://lt5060:3701", "forwardAuthToken": true}
+      ]
+  services:
+    - dev703-java-uaa
+
+- name: dev703-java-backend
+  port: 3701 
+  memory: 512M
+  instances: 1
+  path: java/target/dev703-java.war
+  services:
+    - dev703-java-hdi-container
+    - dev703-java-uaa
+  env:
+    TARGET_RUNTIME: tomee
