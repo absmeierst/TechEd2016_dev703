@@ -18,10 +18,7 @@
 		access-decision-manager-ref="accessDecisionManager"
 		authentication-manager-ref="authenticationManager"
 		use-expressions="true">
-		<sec:anonymous enabled="false" />
-		<sec:intercept-url pattern="/rest/addressbook/deletedata" access="#oauth2.hasScope('${xs.appname}.Delete')" method="GET" />
-		<sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET" />
-		<sec:custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER" />
+		<sec:anonymous enabled="true" />
 		<sec:access-denied-handler ref="oauthAccessDeniedHandler" />
 	</sec:http>
 

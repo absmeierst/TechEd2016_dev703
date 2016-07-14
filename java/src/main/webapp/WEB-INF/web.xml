@@ -8,7 +8,10 @@
 		<res-ref-name>jdbc/dev703-java-hdi-container</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 	</resource-ref>
-
+	<servlet>
+		<servlet-name>POServlet</servlet-name>
+		<servlet-class>com.sap.teched.POServlet</servlet-class>
+	</servlet>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>

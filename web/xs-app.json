@@ -2,7 +2,7 @@
 	"welcomeFile": "index.html",
 	"authenticationMethod": "route",
 	"routes": [{
-		"source": "/java(.*)",
+		"source": "/rest(.*)",
 		"destination": "java",
 		"csrfProtection": true,
 		"authenticationType": "xsuaa"
