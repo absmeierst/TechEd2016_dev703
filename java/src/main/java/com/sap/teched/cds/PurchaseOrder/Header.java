@@ -16,121 +16,34 @@ public class Header implements Serializable {
 	@JoinColumn(name = "\"ITEMS.PURCHASEORDERID\"", referencedColumnName = "\"PURCHASEORDERID\"")
 	private Item item;
 
-	@Column(name = "\"HISTORY.CREATEDBY\"", length = 10)
-	private String created_by;
+	@Column(name = "\"PARTNER\"", length = 10)
+	private String partner;
 
-	@Column(name = "\"HISTORY.CREATEDAT\"", length = 256)
-	private String last_name;
-
-	@Column(name = "\"address\"", length = 256)
-	private String address;
-
-	@Column(name = "\"city\"", length = 256)
-	private String city;
-
-	@Column(name = "\"country\"", length = 256)
-	private String country;
-
-	@Column(name = "\"zip\"", length = 10)
-	private String zip;
-
-	@Column(name = "\"phone\"", length = 25)
-	private String phone;
-
-	@Column(name = "\"email\"", length = 50)
-	private String email;
-
-	@Column(name = "\"web\"", length = 50)
-	private String web;
-
-	public Address() {
+	public Header() {
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setBook(Book book) {
-		this.book = book;
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
-	public Book getBook() {
-		return book;
+	public Item getItem() {
+		return item;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setPartner(String partner) {
+		this.partner = partner;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getPartner() {
+		return partner;
 	}
-
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-
-	public String getLast_name() {
-		return last_name;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-
-	public String getZip() {
-		return zip;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setWeb(String web) {
-		this.web = web;
-	}
-
-	public String getWeb() {
-		return web;
-	}
+	
 }
